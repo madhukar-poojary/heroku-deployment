@@ -34,7 +34,8 @@ def predict():
         reqParam = schema.load(request_data)
     except ValidationError as err:
         # Return a nice message if validation fails
-        return jsonify(err.messages), 400
+        print('validation failed ', err.messages)
+        #return jsonify(err.messages), 400
 
     # Convert request body back to JSON str
     location = reqParam['location']
